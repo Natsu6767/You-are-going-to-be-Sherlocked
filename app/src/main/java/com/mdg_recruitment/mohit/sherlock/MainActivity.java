@@ -1,5 +1,6 @@
 package com.mdg_recruitment.mohit.sherlock;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,27 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        String season = String.valueOf(adapterView.getItemAtPosition(i));
+
+                        switch (season){
+                            case "Season 1" :
+                                Intent intent1 = new Intent(view.getContext(), Season1Activity.class);
+                                startActivity(intent1);
+                                break;
+                            case "Season 2" :
+                                Intent intent2 = new Intent(view.getContext(), Season2Activity.class);
+                                startActivity(intent2);
+                                break;
+                            case "Season 3" :
+                                Intent intent3 = new Intent(view.getContext(), Season3Activity.class);
+                                startActivity(intent3);
+                                break;
+                            case "Season 4" :
+                                Intent intent4 = new Intent(view.getContext(), Season4Activity.class);
+                                startActivity(intent4);
+                                break;
+                        }
 
                     }
                 }

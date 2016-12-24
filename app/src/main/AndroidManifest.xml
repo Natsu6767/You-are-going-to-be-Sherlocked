@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Season1Activity" />
+        <activity android:name=".Season2Activity" />
+        <activity android:name=".Season3Activity" />
+        <activity android:name=".Season4Activity"></activity>
     </application>
 
 </manifest>
