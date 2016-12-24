@@ -2,6 +2,8 @@ package com.mdg_recruitment.mohit.sherlock;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -21,5 +23,16 @@ public class MainActivity extends AppCompatActivity {
         ListView seasonListView = (ListView) findViewById(R.id.seasons);
         //Add values to list
         seasonListView.setAdapter(seasonAdapter);
+
+        //Create Item Click Listener
+        seasonListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    }
+                }
+        );
+
     }
 }
