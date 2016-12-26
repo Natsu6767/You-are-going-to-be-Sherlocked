@@ -14,7 +14,7 @@ public class Season4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_season4);
 
         //Array of String storing seasons
-        String[] episodeArray = {"Episode 0", "Episode 1", "Episode 2", "Episode 3"};
+        String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
         //Creates ListAdapter to convert String to List items
         ListAdapter seasonAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, episodeArray);
         //Create ListView object
