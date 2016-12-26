@@ -11,10 +11,17 @@
     tools:context="com.mdg_recruitment.mohit.sherlock.Season2Activity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Season 2"
+        android:id="@+id/season2TV"
         android:layout_centerHorizontal="true"
-        android:textSize="45sp"/>
+        android:text="Season 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/season2"
+        android:layout_below="@id/season2TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
 
 </RelativeLayout>
