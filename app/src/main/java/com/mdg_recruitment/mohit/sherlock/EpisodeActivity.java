@@ -1,10 +1,19 @@
 package com.mdg_recruitment.mohit.sherlock;
 
+import android.app.ProgressDialog;
 import android.database.Cursor;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class EpisodeActivity extends AppCompatActivity {
 
@@ -19,7 +28,11 @@ public class EpisodeActivity extends AppCompatActivity {
         final String TRIVIA_COLUMN = "trivia";
 
         TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
-        ImageView picImageView;
+        //ImageView picImageView;
+        ProgressDialog pDialog;
+        VideoView trailerVideoView;
+
+        String videoURL = "http://www.ted.com/talks/download/video/8584/talk/761";
 
         @Override
         protected void onCreate(Bundle savedInstanceState){
@@ -31,7 +44,8 @@ public class EpisodeActivity extends AppCompatActivity {
             durationTextView = (TextView) findViewById(R.id.epDuration);
             summaryTextView = (TextView) findViewById(R.id.epSummary);
             triviaTextView = (TextView) findViewById(R.id.epTrivia);
-            picImageView = (ImageView) findViewById(R.id.epImage);
+            //picImageView = (ImageView) findViewById(R.id.epImage);
+            trailerVideoView = (VideoView) findViewById(R.id.epVideo);
 
 
             DataAdapter mDbHelper = new DataAdapter(this);
@@ -62,6 +76,15 @@ public class EpisodeActivity extends AppCompatActivity {
             cursor.close();
 
             mDbHelper.close();
+
+
+            trailerVideoView.setVideoPath(videoURL);
+
+            MediaController videoControls = new MediaController(this);
+            videoControls.setAnchorView(trailerVideoView);
+            trailerVideoView.setMediaController(videoControls);
+
+
         }
 
 

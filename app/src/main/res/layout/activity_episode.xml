@@ -16,15 +16,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/epImage"
+    <VideoView
+        android:id="@+id/epVideo"
         android:layout_below="@id/epName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="200dp" />
 
     <TextView
         android:id="@+id/epRating"
-        android:layout_below="@id/epImage"
+        android:layout_below="@id/epVideo"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
