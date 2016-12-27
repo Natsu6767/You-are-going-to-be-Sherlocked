@@ -30,14 +30,14 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/timehead"
+        android:id="@+id/durationhead"
         android:text="@string/duartion"
         android:layout_below="@id/epRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/epTime"
-        android:layout_toRightOf="@id/timehead"
+        android:id="@+id/epDuration"
+        android:layout_toRightOf="@id/durationhead"
         android:layout_below="@id/epRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -45,7 +45,7 @@
     <TextView
         android:id="@+id/summaryhead"
         android:text="@string/synopsis"
-        android:layout_below="@id/epTime"
+        android:layout_below="@id/epDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
