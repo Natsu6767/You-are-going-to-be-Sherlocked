@@ -1,21 +1,27 @@
 package com.mdg_recruitment.mohit.sherlock;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.MediaController;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.VideoView;
+import android.widget.Toast;
 
-public class EpisodeActivity extends AppCompatActivity {
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
+
+public class EpisodeActivity extends YouTubeBaseActivity implements
+        YouTubePlayer.OnInitializedListener {
+
+    private static final int RECOVERY_DIALOG_REQUEST = 1;
+
+    // YouTube player view
+    private YouTubePlayerView youTubeView;
 
         //Declaring column names of the table in the database
         final static String ID_COLUMN = "id";
@@ -28,15 +34,15 @@ public class EpisodeActivity extends AppCompatActivity {
         final String TRIVIA_COLUMN = "trivia";
 
         TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
-        //ImageView picImageView;
-        ProgressDialog pDialog;
-        VideoView trailerVideoView;
 
-        String videoURL = "http://www.ted.com/talks/download/video/8584/talk/761";
-
-        @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
+
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
             setContentView(R.layout.activity_episode);
 
             nameTextView = (TextView) findViewById(R.id.epName);
@@ -44,16 +50,18 @@ public class EpisodeActivity extends AppCompatActivity {
             durationTextView = (TextView) findViewById(R.id.epDuration);
             summaryTextView = (TextView) findViewById(R.id.epSummary);
             triviaTextView = (TextView) findViewById(R.id.epTrivia);
-            //picImageView = (ImageView) findViewById(R.id.epImage);
-            trailerVideoView = (VideoView) findViewById(R.id.epVideo);
 
+            youTubeView = (YouTubePlayerView) findViewById(R.id.epVideo);
 
+            // Initializing video player with developer key
+             youTubeView.initialize(Config.DEVELOPER_KEY, this);
+
+            //This part of the code deals with the interaction with the database.
             DataAdapter mDbHelper = new DataAdapter(this);
             mDbHelper.createDatabase();
             mDbHelper.open();
 
             Cursor cursor = mDbHelper.getData();
-
                 //Retrieves data from cursor and sets it in the corresponding TextViews
                 String data = cursor.getString(cursor.getColumnIndex(NAME_COLUMN));
                 nameTextView.setText(data);
@@ -70,24 +78,53 @@ public class EpisodeActivity extends AppCompatActivity {
                 data = cursor.getString((cursor.getColumnIndex(TRIVIA_COLUMN)));
                 triviaTextView.setText(data);
 
-
-
-
             cursor.close();
-
             mDbHelper.close();
-
-
-            trailerVideoView.setVideoPath(videoURL);
-
-            MediaController videoControls = new MediaController(this);
-            videoControls.setAnchorView(trailerVideoView);
-            trailerVideoView.setMediaController(videoControls);
-
 
         }
 
-
-
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider,
+                                        YouTubeInitializationResult errorReason) {
+        if (errorReason.isUserRecoverableError()) {
+            errorReason.getErrorDialog(this, RECOVERY_DIALOG_REQUEST).show();
+        } else {
+            String errorMessage = String.format(
+                    getString(R.string.error_player), errorReason.toString());
+            Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
+        }
     }
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider,
+                                        YouTubePlayer player, boolean wasRestored) {
+        if (!wasRestored) {
+
+            // loadVideo() will auto play video
+            // Use cueVideo() method, if you don't want to play it automatically
+            player.loadVideo(Config.YOUTUBE_VIDEO_CODE);
+
+            // Hiding player controls
+            player.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == RECOVERY_DIALOG_REQUEST) {
+            // Retry initialization if user performed a recovery action
+            getYouTubePlayerProvider().initialize(Config.DEVELOPER_KEY, this);
+        }
+    }
+
+    private YouTubePlayer.Provider getYouTubePlayerProvider() {
+        return (YouTubePlayerView) findViewById(R.id.epVideo);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+}
 

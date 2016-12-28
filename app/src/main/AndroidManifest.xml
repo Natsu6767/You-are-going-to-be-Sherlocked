@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mdg_recruitment.mohit.sherlock">
 
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -22,7 +21,8 @@
         <activity android:name=".Season2Activity" />
         <activity android:name=".Season3Activity" />
         <activity android:name=".Season4Activity" />
-        <activity android:name=".EpisodeActivity"></activity>
+        <activity android:name=".EpisodeActivity"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
 </manifest>

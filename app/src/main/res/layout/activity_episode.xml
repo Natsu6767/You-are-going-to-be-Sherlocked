@@ -16,11 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <VideoView
+    <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/epVideo"
-        android:layout_below="@id/epName"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp" />
 
     <TextView
         android:id="@+id/epRating"
