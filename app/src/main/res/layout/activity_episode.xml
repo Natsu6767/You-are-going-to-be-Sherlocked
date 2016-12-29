@@ -4,67 +4,96 @@
     android:id="@+id/activity_episode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mdg_recruitment.mohit.sherlock.EpisodeActivity">
 
     <TextView
         android:id="@+id/epName"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/epVideo"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp" />
+        android:layout_below="@id/epName">
 
-    <TextView
-        android:id="@+id/epRating"
-        android:layout_below="@id/epVideo"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/durationhead"
-        android:text="@string/duartion"
-        android:layout_below="@id/epRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/epDuration"
-        android:layout_toRightOf="@id/durationhead"
-        android:layout_below="@id/epRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/epVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" />
 
-    <TextView
-        android:id="@+id/summaryhead"
-        android:text="@string/synopsis"
-        android:layout_below="@id/epDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/epSummary"
-        android:layout_below="@id/summaryhead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/epRating"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_below="@id/epVideo"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/triviahead"
-        android:text="@string/trivia"
-        android:layout_below="@id/epSummary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/star"
+                android:layout_toRightOf="@id/epRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/epTrivia"
-        android:layout_below="@id/triviahead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/durationhead"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/duartion"
+            android:layout_below="@id/epRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/epDuration"
+            android:layout_toRightOf="@id/durationhead"
+            android:layout_below="@id/epRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/summaryhead"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/synopsis"
+            android:layout_below="@id/epDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/epSummary"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_below="@id/summaryhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/triviahead"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/trivia"
+            android:layout_below="@id/epSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/epTrivia"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_below="@id/triviahead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

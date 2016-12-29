@@ -19,11 +19,11 @@ public class Season3Activity extends AppCompatActivity {
         //Array of String storing seasons
         String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
         //Creates ListAdapter to convert String to List items
-        ListAdapter seasonAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, episodeArray);
+        ListAdapter season3Adapter = new CustomAdapter(this, episodeArray);
         //Create ListView object
         ListView season3ListView = (ListView) findViewById(R.id.season3);
         //Add values to list
-        season3ListView.setAdapter(seasonAdapter);
+        season3ListView.setAdapter(season3Adapter);
 
         //Create Item Click Listener
         season3ListView.setOnItemClickListener(
