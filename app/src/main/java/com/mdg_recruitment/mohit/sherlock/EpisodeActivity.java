@@ -69,7 +69,7 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
                 nameTextView.setText(data);
 
                 data = "" + cursor.getDouble((cursor.getColumnIndex(RATINGS_COLUMN)));
-                ratingsTextView.setText(data + " / 10");
+                ratingsTextView.setText(data);
 
                 data = "" + cursor.getInt(cursor.getColumnIndex(DURATION_COLUMN));
                 durationTextView.setText(data + " min");
