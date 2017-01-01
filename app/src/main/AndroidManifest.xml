@@ -20,7 +20,6 @@
         <activity android:name=".Season1Activity" />
         <activity android:name=".Season2Activity" />
         <activity android:name=".Season3Activity" />
-        <activity android:name=".Season4Activity" />
         <activity android:name=".EpisodeActivity"
             android:configChanges="orientation|screenSize"/>
     </application>

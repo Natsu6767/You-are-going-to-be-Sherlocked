@@ -28,7 +28,7 @@ public class Season1Activity extends AppCompatActivity {
 
         //Create Item Click Listener
         season1ListView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
+                  new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 

@@ -25,7 +25,6 @@ public class CustomAdapter extends ArrayAdapter<String> {
         TextView myText = (TextView) customView.findViewById(R.id.episodeno);
         ImageView myImage = (ImageView) customView.findViewById(R.id.episodeimage);
 
-        myText.setText(eachEpisode);
 
         switch (MainActivity.SEASON){
 
@@ -51,6 +50,8 @@ public class CustomAdapter extends ArrayAdapter<String> {
                 }
                 break;
         }
+
+        myText.setText(eachEpisode);
 
         return  customView;
 
