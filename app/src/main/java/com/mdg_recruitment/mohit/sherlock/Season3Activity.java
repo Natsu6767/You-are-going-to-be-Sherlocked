@@ -18,12 +18,14 @@ public class Season3Activity extends AppCompatActivity {
 
         //Array of String storing seasons
         String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
-        //Creates ListAdapter to convert String to List items
-        ListAdapter season3Adapter = new CustomAdapter(this, episodeArray);
-        //Create ListView object
-        ListView season3ListView = (ListView) findViewById(R.id.season3);
-        //Add values to list
-        season3ListView.setAdapter(season3Adapter);
+        Integer[] imageId = {R.drawable.s3e1, R.drawable.s3e2, R.drawable.s3e3};
+
+        ListView season3ListView;
+
+        CustomList adapter = new
+                CustomList(this, episodeArray, imageId);
+        season3ListView=(ListView)findViewById(R.id.season3);
+        season3ListView.setAdapter(adapter);
 
         //Create Item Click Listener
         season3ListView.setOnItemClickListener(

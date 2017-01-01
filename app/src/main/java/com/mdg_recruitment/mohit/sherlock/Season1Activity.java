@@ -17,14 +17,15 @@ public class Season1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_season1);
 
         //Array of String storing seasons
-        String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
-        //Creates ListAdapter to convert String to List items
-        ListAdapter season1Adapter = new CustomAdapter(this, episodeArray);
-        //Create ListView object
-        ListView season1ListView = (ListView) findViewById(R.id.season1);
-        //Add values to list
-        season1ListView.setAdapter(season1Adapter);
+        final String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
+        Integer[] imageId = {R.drawable.s1e1, R.drawable.s1e2, R.drawable.s1e3};
 
+        ListView season1ListView;
+
+        CustomList adapter = new
+                CustomList(this, episodeArray, imageId);
+        season1ListView=(ListView)findViewById(R.id.season1);
+        season1ListView.setAdapter(adapter);
 
         //Create Item Click Listener
         season1ListView.setOnItemClickListener(
@@ -34,7 +35,7 @@ public class Season1Activity extends AppCompatActivity {
 
                         String episode = String.valueOf(adapterView.getItemAtPosition(i));
 
-                        //Checks which episode whas selected and assigns it to MainActivity.EPISODE
+                        //Checks which episode was selected and assigns it to MainActivity.EPISODE
                         switch (episode){
                             case "Episode 1" :
                                 MainActivity.EPISODE = "Episode 1";
