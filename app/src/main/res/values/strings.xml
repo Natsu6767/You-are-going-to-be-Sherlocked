@@ -4,4 +4,4 @@
     <string name="synopsis">Synopsis:</string>
     <string name="trivia">Trivia:</string>
     <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
-    </resources>
+</resources>
