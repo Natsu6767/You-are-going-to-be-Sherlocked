@@ -9,6 +9,6 @@
         android:textSize="54sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFAB00"/>
+        android:textColor="#D4AF37"/>
 
 </LinearLayout>

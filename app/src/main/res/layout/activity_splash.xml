@@ -21,7 +21,8 @@
         android:gravity="center"
         android:text="@string/Splash_Title"
         android:textSize="44sp"
-        android:textColor="#ff0000"/>
+        android:textColor="#ff0000"
+        android:fontFamily="sans-serif-black"/>
 
     <ImageView
         android:src="@drawable/sherlock_splash2"

@@ -12,9 +12,11 @@
         android:background="#000000"
         android:textColor="#66BB6A"
         android:gravity="center_horizontal"
-        android:text="Season 2"
+        android:text="Season  2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:letterSpacing="0.25"/>
 
     <ListView
         android:id="@+id/season2"
