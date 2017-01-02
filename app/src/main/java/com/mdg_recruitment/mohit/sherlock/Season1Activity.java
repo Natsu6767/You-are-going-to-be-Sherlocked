@@ -22,10 +22,9 @@ public class Season1Activity extends AppCompatActivity {
 
         ListView season1ListView;
 
-        CustomList adapter = new
-                CustomList(this, episodeArray, imageId);
+        CustomList season1Adapter = new CustomList(this, episodeArray, imageId);
         season1ListView=(ListView)findViewById(R.id.season1);
-        season1ListView.setAdapter(adapter);
+        season1ListView.setAdapter(season1Adapter);
 
         //Create Item Click Listener
         season1ListView.setOnItemClickListener(

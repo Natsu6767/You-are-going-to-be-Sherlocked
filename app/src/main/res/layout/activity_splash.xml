@@ -5,18 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mdg_recruitment.mohit.sherlock.Splash">
+    tools:context="com.mdg_recruitment.mohit.sherlock.Splash"
+    android:background="#000000">
+
+    <ImageView
+        android:src="@drawable/sherlock_splash1"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="You are going to be Sherlocked!"
-        android:textSize="44sp"/>
+        android:text="@string/Splash_Title"
+        android:textSize="44sp"
+        android:textColor="#ff0000"/>
 
-    <ImageView android:id="@+id/splashscreen"
+    <ImageView
+        android:src="@drawable/sherlock_splash2"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"/>
 
 </LinearLayout>

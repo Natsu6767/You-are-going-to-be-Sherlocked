@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //Array of String storing seasons
         String[] seasonArray = {"Season 1", "Season 2", "Season 3"};
         //Creates ListAdapter to convert String to List items
-        ListAdapter seasonAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, seasonArray);
+        StringList seasonAdapter = new StringList(this, seasonArray);
         //Create ListView object
         ListView seasonListView = (ListView) findViewById(R.id.seasons);
         //Add values to list
