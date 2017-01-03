@@ -27,12 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.youtube.player.YouTubePlayerView
-                android:id="@+id/epVideo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp" />
-
+                <com.google.android.youtube.player.YouTubePlayerView
+                    android:id="@+id/epVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"/>
 
             <TextView
                 android:id="@+id/ten"

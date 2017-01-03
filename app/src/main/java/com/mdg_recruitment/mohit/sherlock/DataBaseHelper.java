@@ -21,9 +21,9 @@ public class DataBaseHelper extends SQLiteOpenHelper
     private SQLiteDatabase mDataBase;
     private final Context mContext;
 
-    public DataBaseHelper(Context context) //Contructor
+    public DataBaseHelper(Context context) //Constructor
     {
-        super(context, DB_NAME, null, 1);// 1? Its database Version
+        super(context, DB_NAME, null, 1);//Its database Version
         if(android.os.Build.VERSION.SDK_INT >= 17){
             DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         }

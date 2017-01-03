@@ -5,6 +5,8 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.android.youtube.player.YouTubePlayer.OnFullscreenListener;
 
 public class EpisodeActivity extends YouTubeBaseActivity implements
         YouTubePlayer.OnInitializedListener {
@@ -22,6 +25,7 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
 
     // YouTube player view
     private YouTubePlayerView youTubeView;
+    private  YouTubePlayer youTubePlayer;
 
         //Declaring column names of the table in the database
         final static String ID_COLUMN = "id";
@@ -100,6 +104,9 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                         YouTubePlayer player, boolean wasRestored) {
+
+        youTubePlayer = player;
+
         if (!wasRestored) {
 
             // loadVideo() will auto play video
@@ -107,7 +114,7 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
             player.loadVideo(Config.YOUTUBE_VIDEO_CODE);
 
             // Hiding player controls
-            player.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+            player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
         }
     }
 
@@ -123,10 +130,6 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
         return (YouTubePlayerView) findViewById(R.id.epVideo);
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-    }
 
 }
 

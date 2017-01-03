@@ -10,15 +10,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Season1Activity" />
         <activity android:name=".Season2Activity" />
         <activity android:name=".Season3Activity" />
         <activity
             android:name=".EpisodeActivity"
-            android:configChanges="orientation|screenSize" />
-        <activity android:name=".Splash">
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Splash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
