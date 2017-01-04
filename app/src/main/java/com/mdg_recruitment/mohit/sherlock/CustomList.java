@@ -13,8 +13,7 @@ public class CustomList extends ArrayAdapter<String>{
     private final Activity context;
     private final String[] name;
     private final Integer[] imageId;
-    public CustomList(Activity context,
-                      String[] web, Integer[] imageId) {
+    public CustomList(Activity context, String[] web, Integer[] imageId) {
         super(context, R.layout.custom_rows, web);
         this.context = context;
         this.name = web;

@@ -86,7 +86,6 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
 
             cursor.close();
             mDbHelper.close();
-
         }
 
     @Override
@@ -129,7 +128,5 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
     private YouTubePlayer.Provider getYouTubePlayerProvider() {
         return (YouTubePlayerView) findViewById(R.id.epVideo);
     }
-
-
 }
 

@@ -18,12 +18,14 @@ public class Season2Activity extends AppCompatActivity {
 
         //Array of String storing seasons
         String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
+        //Array of image id
         Integer[] imageId = {R.drawable.s2e1, R.drawable.s2e2, R.drawable.s2e3};
 
         ListView season2ListView;
-
-        CustomList season2Adapter = new CustomList(this, episodeArray, imageId);
         season2ListView=(ListView)findViewById(R.id.season2);
+
+        //Creates the required adapter
+        CustomList season2Adapter = new CustomList(this, episodeArray, imageId);
         season2ListView.setAdapter(season2Adapter);
 
         //Create Item Click Listener

@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //These two variables are used for the SQL query as contraints
+    //These two variables are used for the SQL query as constraints
     public static String EPISODE = new String();
     public static String SEASON = new String();
 

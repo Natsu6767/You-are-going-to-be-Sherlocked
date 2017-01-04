@@ -11,6 +11,8 @@ public class Config {
     // Sets YouTube video id
     public static void videoIdSet(){
 
+
+        //Used to set the video id for each video
          switch (MainActivity.SEASON){
 
              case "Season 1" :
@@ -20,6 +22,7 @@ public class Config {
                      case "Episode 3" : YOUTUBE_VIDEO_CODE = "AviDWKhmVdU"; break;
                  }
                  break;
+
              case "Season 2" :
                  switch (MainActivity.EPISODE){
                      case "Episode 1" : YOUTUBE_VIDEO_CODE = "JE4wTmbyV8g"; break;
@@ -27,6 +30,7 @@ public class Config {
                      case "Episode 3" : YOUTUBE_VIDEO_CODE = "wVoo9RqrHtw"; break;
                  }
                  break;
+
              case "Season 3" :
                  switch (MainActivity.EPISODE){
                      case "Episode 1" : YOUTUBE_VIDEO_CODE = "O7cKIjNIPoY"; break;
@@ -34,8 +38,8 @@ public class Config {
                      case "Episode 3" : YOUTUBE_VIDEO_CODE = "LI7T69cA3Kg"; break;
                  }
                  break;
-         }
 
+         }
 
     }
 }

@@ -38,17 +38,10 @@ public class DataAdapter
 
     public DataAdapter open() throws SQLException
     {
-        try
-        {
             mDbHelper.openDataBase();
             mDbHelper.close();
             mDb = mDbHelper.getReadableDatabase();
-        }
-        catch (SQLException mSQLException)
-        {
-            Log.e(TAG, "open >>"+ mSQLException.toString());
-            throw mSQLException;
-        }
+
         return this;
     }
 
@@ -59,19 +52,12 @@ public class DataAdapter
 
     public Cursor getData() //Function to retrieve data from inside the table in the database
     {
-        try
-        {
             //The SQL query which gives the required data result. episodedesc is the table name inside the database sherlock
             String sql ="SELECT * FROM episodedesc WHERE " + EpisodeActivity.SEASON_COLUMN + " = \"" + MainActivity.SEASON + "\" AND " + EpisodeActivity.EPISODE_COLUMN + " = \"" + MainActivity.EPISODE + "\";";
 
             Cursor mCur = mDb.rawQuery(sql, null);
             mCur.moveToFirst();
             return mCur;
-        }
-        catch (SQLException mSQLException)
-        {
-            Log.e(TAG, "getData >>"+ mSQLException.toString());
-            throw mSQLException;
-        }
+
     }
 }

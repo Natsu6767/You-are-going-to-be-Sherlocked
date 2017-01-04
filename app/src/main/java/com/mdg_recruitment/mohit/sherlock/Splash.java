@@ -7,10 +7,10 @@ import android.os.Handler;
 
 public class Splash extends Activity {
 
-    /** Duration of wait **/
-    private final int SPLASH_DISPLAY_LENGTH = 4000;
+    // Duration of wait
+    private final int SPLASH_DISPLAY_LENGTH = 3750;
 
-    /** Called when the activity is first created. */
+    // Called when the activity is first created.
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);

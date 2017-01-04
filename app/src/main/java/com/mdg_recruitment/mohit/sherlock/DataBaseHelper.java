@@ -14,7 +14,6 @@ import java.io.OutputStream;
 
 public class DataBaseHelper extends SQLiteOpenHelper
 {
-    private static String TAG = "DataBaseHelper"; // Tag just for the LogCat window
     //destination path (location) of our database on device
     private static String DB_PATH = "";
     private static String DB_NAME ="sherlock";// Database name
@@ -43,24 +42,15 @@ public class DataBaseHelper extends SQLiteOpenHelper
         {
             this.getReadableDatabase();
             this.close();
-            try
-            {
                 //Copy the database from assests
                 copyDataBase();
-                Log.e(TAG, "createDatabase database created");
-            }
-            catch (IOException mIOException)
-            {
-                throw new Error("ErrorCopyingDataBase");
-            }
         }
     }
 
-    //Check that the database exists here: /data/data/your package/databases/Da Name
+    //Checks whether the database exists here: /data/data/your package/databases/Da Name
     private boolean checkDataBase()
     {
         File dbFile = new File(DB_PATH + DB_NAME);
-        //Log.v("dbFile", dbFile + "   "+ dbFile.exists());
         return dbFile.exists();
     }
 
@@ -85,9 +75,9 @@ public class DataBaseHelper extends SQLiteOpenHelper
     public boolean openDataBase() throws SQLException
     {
         String mPath = DB_PATH + DB_NAME;
-        //Log.v("mPath", mPath);
+
         mDataBase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-        //mDataBase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+
         return mDataBase != null;
     }
 

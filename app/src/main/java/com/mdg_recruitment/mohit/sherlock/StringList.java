@@ -11,12 +11,12 @@ import android.widget.TextView;
 public class StringList extends ArrayAdapter<String>{
 
     private final Activity context;
-    private final String[] web;
-    public StringList(Activity context,
-                      String[] web) {
-        super(context, R.layout.custom_rows, web);
+    private final String[] name;
+    public StringList(Activity context, String[] name) {
+
+        super(context, R.layout.custom_rows, name);
         this.context = context;
-        this.web = web;
+        this.name = name;
 
     }
     @Override
@@ -25,7 +25,7 @@ public class StringList extends ArrayAdapter<String>{
         View rowView= inflater.inflate(R.layout.list_item, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.season);
 
-        txtTitle.setText(web[position]);
+        txtTitle.setText(name[position]);
         return rowView;
     }
 }
