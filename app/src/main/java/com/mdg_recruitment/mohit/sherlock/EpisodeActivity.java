@@ -109,10 +109,9 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
         if (!wasRestored) {
 
             // loadVideo() will auto play video
-            // Use cueVideo() method, if you don't want to play it automatically
             player.loadVideo(Config.YOUTUBE_VIDEO_CODE);
 
-            // Hiding player controls
+            // Setting YouTube player style
             player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
         }
     }
