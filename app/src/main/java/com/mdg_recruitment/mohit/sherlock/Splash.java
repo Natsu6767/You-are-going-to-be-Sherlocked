@@ -4,24 +4,31 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class Splash extends Activity {
 
     // Duration of wait
-    private final int SPLASH_DISPLAY_LENGTH = 3750;
+    private final int SPLASH_DISPLAY_LENGTH = 3750; //Number arrived at using hit and trial
 
     // Called when the activity is first created.
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        //Makes the activity run in full screen
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_splash);
 
-        /* New Handler to start the Menu-Activity
+        /* New Handler to start the MainActivity
          * and close this Splash-Screen after some seconds.*/
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
+                //Create an Intent that will start the MainActivity.
                 Intent mainIntent = new Intent(Splash.this,MainActivity.class);
                 Splash.this.startActivity(mainIntent);
                 Splash.this.finish();

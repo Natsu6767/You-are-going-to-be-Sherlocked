@@ -25,7 +25,6 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
 
     // YouTube player view
     private YouTubePlayerView youTubeView;
-    private  YouTubePlayer youTubePlayer;
 
         //Declaring column names of the table in the database
         final static String ID_COLUMN = "id";
@@ -37,7 +36,7 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
         final String SUMMARY_COLUMN = "summary";
         final String TRIVIA_COLUMN = "trivia";
 
-        TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
+        private TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
 
     @Override
         protected void onCreate(Bundle savedInstanceState){
@@ -45,9 +44,9 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
 
             Config.videoIdSet();
 
+            //Makes the activity run in full screen
             requestWindowFeature(Window.FEATURE_NO_TITLE);
-             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             setContentView(R.layout.activity_episode);
 
@@ -103,8 +102,6 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                         YouTubePlayer player, boolean wasRestored) {
-
-        youTubePlayer = player;
 
         if (!wasRestored) {
 

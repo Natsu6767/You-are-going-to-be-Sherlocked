@@ -16,7 +16,7 @@ public class DataAdapter
     private SQLiteDatabase mDb;
     private DataBaseHelper mDbHelper;
 
-    public DataAdapter(Context context)  //Contructor
+    public DataAdapter(Context context)  //Constructor
     {
         this.mContext = context;
         mDbHelper = new DataBaseHelper(mContext);
