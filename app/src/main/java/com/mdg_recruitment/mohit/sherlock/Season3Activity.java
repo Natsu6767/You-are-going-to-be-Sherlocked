@@ -22,7 +22,7 @@ public class Season3Activity extends AppCompatActivity {
         Integer[] imageId = {R.drawable.s3e1, R.drawable.s3e2, R.drawable.s3e3};
 
         ListView season3ListView;
-        season3ListView=(ListView)findViewById(R.id.season3);
+        season3ListView = (ListView) findViewById(R.id.season3);
 
         //Creates the rwquired adapter
         CustomList season3Adapter = new CustomList(this, episodeArray, imageId);
@@ -37,14 +37,14 @@ public class Season3Activity extends AppCompatActivity {
                         String episode = String.valueOf(adapterView.getItemAtPosition(i));
 
                         //Checks which episode whas selected and assigns it to MainActivity.EPISODE
-                        switch (episode){
-                            case "Episode 1" :
+                        switch (episode) {
+                            case "Episode 1":
                                 MainActivity.EPISODE = "Episode 1";
                                 break;
-                            case "Episode 2" :
+                            case "Episode 2":
                                 MainActivity.EPISODE = "Episode 2";
                                 break;
-                            case "Episode 3" :
+                            case "Episode 3":
                                 MainActivity.EPISODE = "Episode 3";
                                 break;
                         }

@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/epName"
-        android:textSize="34sp"
-        android:background="#000000"
-        android:textColor="#42A5F5"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"/>
+        android:layout_centerHorizontal="true"
+        android:background="#000000"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_horizontal"
+        android:textColor="#42A5F5"
+        android:textSize="34sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,115 +27,117 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-                <com.google.android.youtube.player.YouTubePlayerView
-                    android:id="@+id/epVideo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"/>
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/epVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp" />
 
             <TextView
                 android:id="@+id/ten"
-                android:textSize="20sp"
-                android:text="/10"
-                android:layout_marginRight="10dp"
-                android:layout_below="@id/epVideo"
-                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FF5252"/>
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/epVideo"
+                android:layout_marginRight="10dp"
+                android:text="/10"
+                android:textColor="#FF5252"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/epRating"
-                android:textSize="26sp"
-                android:layout_marginLeft="8dp"
-                android:layout_below="@id/epVideo"
-                android:layout_toLeftOf="@id/ten"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff" />
+                android:layout_below="@id/epVideo"
+                android:layout_marginLeft="8dp"
+                android:layout_toLeftOf="@id/ten"
+                android:textColor="#ffffff"
+                android:textSize="26sp" />
 
 
             <ImageView
-                android:layout_toLeftOf="@id/epRating"
-                android:layout_below="@id/epVideo"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_below="@id/epVideo"
+                android:layout_toLeftOf="@id/epRating"
                 android:src="@drawable/star"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff" />
 
             <TextView
                 android:id="@+id/durationhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/epRating"
+                android:layout_marginBottom="18dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="18dp"
+                android:fontFamily="sans-serif-medium"
                 android:text="@string/duration"
-                android:textSize="22sp"
-                android:layout_below="@id/epRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:textColor="#FFC107"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"/>
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/epDuration"
-                android:layout_toRightOf="@id/durationhead"
-                android:layout_below="@id/epRating"
-                android:textSize="19sp"
-                android:layout_marginBottom="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"/>
+                android:layout_below="@id/epRating"
+                android:layout_marginBottom="18dp"
+                android:layout_toRightOf="@id/durationhead"
+                android:textColor="#ffffff"
+                android:textSize="19sp" />
 
             <TextView
                 android:id="@+id/summaryhead"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginBottom="3dp"
-                android:text="@string/synopsis"
-                android:layout_below="@id/epDuration"
-                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/epDuration"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/synopsis"
                 android:textColor="#FFC107"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/epSummary"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginBottom="20dp"
-                android:layout_below="@id/summaryhead"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/summaryhead"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="sans-serif"
                 android:textColor="#ffffff"
-                android:fontFamily="sans-serif"/>
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/triviahead"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginBottom="3dp"
-                android:text="@string/trivia"
-                android:layout_below="@id/epSummary"
-                android:textSize="19sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/epSummary"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/trivia"
                 android:textColor="#80DEEA"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"/>
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/epTrivia"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginBottom="18dp"
-                android:layout_below="@id/triviahead"
-                android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/triviahead"
+                android:layout_marginBottom="18dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
                 android:textColor="#81C784"
-                android:textStyle="italic"/>
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
         </RelativeLayout>
 

@@ -26,66 +26,66 @@ public class EpisodeActivity extends YouTubeBaseActivity implements
     // YouTube player view
     private YouTubePlayerView youTubeView;
 
-        //Declaring column names of the table in the database
-        final static String ID_COLUMN = "id";
-        final static String SEASON_COLUMN = "season";
-        final static String EPISODE_COLUMN = "episode";
-        final String NAME_COLUMN = "name";
-        final String DURATION_COLUMN = "duration";
-        final String RATINGS_COLUMN = "ratings";
-        final String SUMMARY_COLUMN = "summary";
-        final String TRIVIA_COLUMN = "trivia";
+    //Declaring column names of the table in the database
+    final static String ID_COLUMN = "id";
+    final static String SEASON_COLUMN = "season";
+    final static String EPISODE_COLUMN = "episode";
+    final String NAME_COLUMN = "name";
+    final String DURATION_COLUMN = "duration";
+    final String RATINGS_COLUMN = "ratings";
+    final String SUMMARY_COLUMN = "summary";
+    final String TRIVIA_COLUMN = "trivia";
 
-        private TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
+    private TextView nameTextView, ratingsTextView, durationTextView, summaryTextView, triviaTextView;
 
     @Override
-        protected void onCreate(Bundle savedInstanceState){
-            super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-            Config.videoIdSet();
+        Config.videoIdSet();
 
-            //Makes the activity run in full screen
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //Makes the activity run in full screen
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-            setContentView(R.layout.activity_episode);
+        setContentView(R.layout.activity_episode);
 
-            nameTextView = (TextView) findViewById(R.id.epName);
-            ratingsTextView = (TextView) findViewById(R.id.epRating);
-            durationTextView = (TextView) findViewById(R.id.epDuration);
-            summaryTextView = (TextView) findViewById(R.id.epSummary);
-            triviaTextView = (TextView) findViewById(R.id.epTrivia);
+        nameTextView = (TextView) findViewById(R.id.epName);
+        ratingsTextView = (TextView) findViewById(R.id.epRating);
+        durationTextView = (TextView) findViewById(R.id.epDuration);
+        summaryTextView = (TextView) findViewById(R.id.epSummary);
+        triviaTextView = (TextView) findViewById(R.id.epTrivia);
 
-            youTubeView = (YouTubePlayerView) findViewById(R.id.epVideo);
+        youTubeView = (YouTubePlayerView) findViewById(R.id.epVideo);
 
-            // Initializing video player with developer key
-             youTubeView.initialize(Config.DEVELOPER_KEY, this);
+        // Initializing video player with developer key
+        youTubeView.initialize(Config.DEVELOPER_KEY, this);
 
-            //This part of the code deals with the interaction with the database.
-            DataAdapter mDbHelper = new DataAdapter(this);
-            mDbHelper.createDatabase();
-            mDbHelper.open();
+        //This part of the code deals with the interaction with the database.
+        DataAdapter mDbHelper = new DataAdapter(this);
+        mDbHelper.createDatabase();
+        mDbHelper.open();
 
-            Cursor cursor = mDbHelper.getData();
-                //Retrieves data from cursor and sets it in the corresponding TextViews
-                String data = cursor.getString(cursor.getColumnIndex(NAME_COLUMN));
-                nameTextView.setText(data);
+        Cursor cursor = mDbHelper.getData();
+        //Retrieves data from cursor and sets it in the corresponding TextViews
+        String data = cursor.getString(cursor.getColumnIndex(NAME_COLUMN));
+        nameTextView.setText(data);
 
-                data = "" + cursor.getDouble((cursor.getColumnIndex(RATINGS_COLUMN)));
-                ratingsTextView.setText(data);
+        data = "" + cursor.getDouble((cursor.getColumnIndex(RATINGS_COLUMN)));
+        ratingsTextView.setText(data);
 
-                data = "" + cursor.getInt(cursor.getColumnIndex(DURATION_COLUMN));
-                durationTextView.setText(data + " min");
+        data = "" + cursor.getInt(cursor.getColumnIndex(DURATION_COLUMN));
+        durationTextView.setText(data + " min");
 
-                data = cursor.getString((cursor.getColumnIndex(SUMMARY_COLUMN)));
-                summaryTextView.setText(data);
+        data = cursor.getString((cursor.getColumnIndex(SUMMARY_COLUMN)));
+        summaryTextView.setText(data);
 
-                data = cursor.getString((cursor.getColumnIndex(TRIVIA_COLUMN)));
-                triviaTextView.setText(data);
+        data = cursor.getString((cursor.getColumnIndex(TRIVIA_COLUMN)));
+        triviaTextView.setText(data);
 
-            cursor.close();
-            mDbHelper.close();
-        }
+        cursor.close();
+        mDbHelper.close();
+    }
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider,

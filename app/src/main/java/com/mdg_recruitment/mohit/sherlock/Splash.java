@@ -25,11 +25,11 @@ public class Splash extends Activity {
 
         /* New Handler to start the MainActivity
          * and close this Splash-Screen after some seconds.*/
-        new Handler().postDelayed(new Runnable(){
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //Create an Intent that will start the MainActivity.
-                Intent mainIntent = new Intent(Splash.this,MainActivity.class);
+                Intent mainIntent = new Intent(Splash.this, MainActivity.class);
                 Splash.this.startActivity(mainIntent);
                 Splash.this.finish();
             }

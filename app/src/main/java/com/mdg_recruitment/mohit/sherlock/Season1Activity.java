@@ -22,7 +22,7 @@ public class Season1Activity extends AppCompatActivity {
         Integer[] imageId = {R.drawable.s1e1, R.drawable.s1e2, R.drawable.s1e3};
 
         ListView season1ListView;
-        season1ListView=(ListView)findViewById(R.id.season1);
+        season1ListView = (ListView) findViewById(R.id.season1);
 
         //Creates the adapter
         CustomList season1Adapter = new CustomList(this, episodeArray, imageId);
@@ -30,21 +30,21 @@ public class Season1Activity extends AppCompatActivity {
 
         //Create Item Click Listener
         season1ListView.setOnItemClickListener(
-                  new AdapterView.OnItemClickListener() {
+                new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                         String episode = String.valueOf(adapterView.getItemAtPosition(i));
 
                         //Checks which episode was selected and assigns it to MainActivity.EPISODE
-                        switch (episode){
-                            case "Episode 1" :
+                        switch (episode) {
+                            case "Episode 1":
                                 MainActivity.EPISODE = "Episode 1";
                                 break;
-                            case "Episode 2" :
+                            case "Episode 2":
                                 MainActivity.EPISODE = "Episode 2";
                                 break;
-                            case "Episode 3" :
+                            case "Episode 3":
                                 MainActivity.EPISODE = "Episode 3";
                                 break;
                         }

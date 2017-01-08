@@ -8,21 +8,20 @@
 
     <TextView
         android:id="@+id/season2TV"
-        android:textSize="34sp"
-        android:background="#000000"
-        android:textColor="#66BB6A"
-        android:gravity="center_horizontal"
-        android:text="Season  2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:letterSpacing="0.25"/>
+        android:background="#000000"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.25"
+        android:text="Season  2"
+        android:textColor="#66BB6A"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/season2"
-        android:layout_below="@id/season2TV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/season2TV"></ListView>
 
 </RelativeLayout>

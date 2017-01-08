@@ -4,20 +4,20 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:orientation="vertical"
-    tools:context="com.mdg_recruitment.mohit.sherlock.MainActivity"
-    android:background="#000000">
+    tools:context="com.mdg_recruitment.mohit.sherlock.MainActivity">
 
     <ImageView
-        android:src="@drawable/sherlocked"
         android:layout_width="match_parent"
-        android:layout_weight="1"
         android:layout_height="0dp"
-        android:adjustViewBounds="true"/>
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sherlocked" />
 
     <ListView
-        android:layout_marginTop="12dp"
         android:id="@+id/seasons"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"></ListView>
 </LinearLayout>

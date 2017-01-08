@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CustomList extends ArrayAdapter<String>{
+public class CustomList extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] name;
     private final Integer[] imageId;
+
     public CustomList(Activity context, String[] web, Integer[] imageId) {
         super(context, R.layout.custom_rows, web);
         this.context = context;
@@ -20,10 +21,11 @@ public class CustomList extends ArrayAdapter<String>{
         this.imageId = imageId;
 
     }
+
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View rowView= inflater.inflate(R.layout.custom_rows, null, true);
+        View rowView = inflater.inflate(R.layout.custom_rows, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.episodeno);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.episodeimage);

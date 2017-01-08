@@ -12,58 +12,50 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class DataBaseHelper extends SQLiteOpenHelper
-{
+public class DataBaseHelper extends SQLiteOpenHelper {
     //destination path (location) of our database on device
     private static String DB_PATH = "";
-    private static String DB_NAME ="sherlock";// Database name
+    private static String DB_NAME = "sherlock";// Database name
     private SQLiteDatabase mDataBase;
     private final Context mContext;
 
     public DataBaseHelper(Context context) //Constructor
     {
         super(context, DB_NAME, null, 1);//Its database Version
-        if(android.os.Build.VERSION.SDK_INT >= 17){
+        if (android.os.Build.VERSION.SDK_INT >= 17) {
             DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        }
-        else
-        {
+        } else {
             DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         }
         this.mContext = context;
     }
 
-    public void createDataBase() throws IOException
-    {
+    public void createDataBase() throws IOException {
         //If the database does not exist, copy it from the assets.
 
         boolean mDataBaseExist = checkDataBase();
-        if(!mDataBaseExist)
-        {
+        if (!mDataBaseExist) {
             this.getReadableDatabase();
             this.close();
-                //Copy the database from assests
-                copyDataBase();
+            //Copy the database from assests
+            copyDataBase();
         }
     }
 
     //Checks whether the database exists here: /data/data/your package/databases/Da Name
-    private boolean checkDataBase()
-    {
+    private boolean checkDataBase() {
         File dbFile = new File(DB_PATH + DB_NAME);
         return dbFile.exists();
     }
 
     //Copy the database from assets
-    private void copyDataBase() throws IOException
-    {
+    private void copyDataBase() throws IOException {
         InputStream mInput = mContext.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
         OutputStream mOutput = new FileOutputStream(outFileName);
         byte[] mBuffer = new byte[1024];
         int mLength;
-        while ((mLength = mInput.read(mBuffer))>0)
-        {
+        while ((mLength = mInput.read(mBuffer)) > 0) {
             mOutput.write(mBuffer, 0, mLength);
         }
         mOutput.flush();
@@ -72,8 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     }
 
     //Open the database, so we can query it
-    public boolean openDataBase() throws SQLException
-    {
+    public boolean openDataBase() throws SQLException {
         String mPath = DB_PATH + DB_NAME;
 
         mDataBase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
@@ -82,9 +73,8 @@ public class DataBaseHelper extends SQLiteOpenHelper
     }
 
     @Override
-    public synchronized void close()
-    {
-        if(mDataBase != null)
+    public synchronized void close() {
+        if (mDataBase != null)
             mDataBase.close();
         super.close();
     }

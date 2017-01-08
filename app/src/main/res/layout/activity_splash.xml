@@ -4,31 +4,31 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:orientation="vertical"
-    tools:context="com.mdg_recruitment.mohit.sherlock.Splash"
-    android:background="#000000">
+    tools:context="com.mdg_recruitment.mohit.sherlock.Splash">
 
     <ImageView
-        android:src="@drawable/sherlock_splash1"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:adjustViewBounds="true"/>
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sherlock_splash1" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/Splash_Title"
-        android:textSize="44sp"
         android:textColor="#ff0000"
-        android:fontFamily="sans-serif-black"/>
+        android:textSize="44sp" />
 
     <ImageView
-        android:src="@drawable/sherlock_splash2"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:adjustViewBounds="true"/>
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sherlock_splash2" />
 
 </LinearLayout>
