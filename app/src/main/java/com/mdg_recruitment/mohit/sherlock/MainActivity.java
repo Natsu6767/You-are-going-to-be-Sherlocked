@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent3);
                                 break;
                             case "Season 4":
-                                SEASON = "Season 3";
+                                SEASON = "Season 4";
                                 Intent intent4 = new Intent(view.getContext(), Season4Activity.class);
                                 startActivity(intent4);
                                 break;
