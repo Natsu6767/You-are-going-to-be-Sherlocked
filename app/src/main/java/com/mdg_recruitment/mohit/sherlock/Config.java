@@ -57,6 +57,22 @@ public class Config {
                 }
                 break;
 
+            case "Season 4":
+                switch (MainActivity.EPISODE) {
+                    case "Episode 1":
+                        YOUTUBE_VIDEO_CODE = "O11V8ArXTpc";
+                        break;
+                    /*
+                    case "Episode 2":
+                        YOUTUBE_VIDEO_CODE = "N-lMgIg2p1c";
+                        break;
+                    case "Episode 3":
+                        YOUTUBE_VIDEO_CODE = "LI7T69cA3Kg";
+                        break;
+                    */
+                }
+                break;
+
         }
 
     }

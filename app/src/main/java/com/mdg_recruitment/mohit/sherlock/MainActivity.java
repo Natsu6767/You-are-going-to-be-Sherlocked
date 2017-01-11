@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Array of String storing seasons
-        String[] seasonArray = {"Season 1", "Season 2", "Season 3"};
+        String[] seasonArray = {"Season 1", "Season 2", "Season 3", "Season 4"};
         //Creates ListAdapter to convert String to List items
         StringList seasonAdapter = new StringList(this, seasonArray);
         //Create ListView object
@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
                                 SEASON = "Season 3";
                                 Intent intent3 = new Intent(view.getContext(), Season3Activity.class);
                                 startActivity(intent3);
+                                break;
+                            case "Season 4":
+                                SEASON = "Season 3";
+                                Intent intent4 = new Intent(view.getContext(), Season4Activity.class);
+                                startActivity(intent4);
                                 break;
                         }
 

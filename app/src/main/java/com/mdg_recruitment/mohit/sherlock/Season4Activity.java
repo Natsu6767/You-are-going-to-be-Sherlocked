@@ -5,31 +5,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class Season1Activity extends AppCompatActivity {
+public class Season4Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_season1);
+        setContentView(R.layout.activity_season4);
 
         //Array of String storing seasons
-        final String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
-        //Array of images id
-        Integer[] imageId = {R.drawable.s1e1, R.drawable.s1e2, R.drawable.s1e3};
+        String[] episodeArray = {"Episode 1", "Episode 2", "Episode 3"};
+        //Array of image id
+        Integer[] imageId = {R.drawable.s4e1, R.drawable.s4e2, R.drawable.s4e3};
 
-        ListView season1ListView;
-        season1ListView = (ListView) findViewById(R.id.season1);
+        ListView season4ListView;
+        season4ListView = (ListView) findViewById(R.id.season4);
 
-        //Creates the adapter
-        CustomList season1Adapter = new CustomList(this, episodeArray, imageId);
-        season1ListView.setAdapter(season1Adapter);
+        //Creates the rwquired adapter
+        CustomList season4Adapter = new CustomList(this, episodeArray, imageId);
+        season4ListView.setAdapter(season4Adapter);
 
         //Create Item Click Listener
-        season1ListView.setOnItemClickListener(
+        season4ListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -38,7 +37,7 @@ public class Season1Activity extends AppCompatActivity {
 
                         Intent intent = new Intent(view.getContext(), EpisodeActivity.class);
 
-                        //Checks which episode was selected and assigns it to MainActivity.EPISODE
+                        //Checks which episode whas selected and assigns it to MainActivity.EPISODE
                         switch (episode) {
                             case "Episode 1":
                                 MainActivity.EPISODE = "Episode 1";
@@ -46,11 +45,11 @@ public class Season1Activity extends AppCompatActivity {
                                 break;
                             case "Episode 2":
                                 MainActivity.EPISODE = "Episode 2";
-                                startActivity(intent);
+                                Toast.makeText(Season4Activity.this, "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                             case "Episode 3":
                                 MainActivity.EPISODE = "Episode 3";
-                                startActivity(intent);
+                                Toast.makeText(Season4Activity.this, "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                         }
 
@@ -58,6 +57,5 @@ public class Season1Activity extends AppCompatActivity {
                     }
                 }
         );
-
     }
 }

@@ -36,21 +36,23 @@ public class Season3Activity extends AppCompatActivity {
 
                         String episode = String.valueOf(adapterView.getItemAtPosition(i));
 
-                        //Checks which episode whas selected and assigns it to MainActivity.EPISODE
+                        Intent intent = new Intent(view.getContext(), EpisodeActivity.class);
+
+                        //Checks which episode was selected and assigns it to MainActivity.EPISODE
                         switch (episode) {
                             case "Episode 1":
                                 MainActivity.EPISODE = "Episode 1";
+                                startActivity(intent);
                                 break;
                             case "Episode 2":
                                 MainActivity.EPISODE = "Episode 2";
+                                startActivity(intent);
                                 break;
                             case "Episode 3":
                                 MainActivity.EPISODE = "Episode 3";
+                                startActivity(intent);
                                 break;
                         }
-
-                        Intent intent = new Intent(view.getContext(), EpisodeActivity.class);
-                        startActivity(intent);
 
                     }
                 }
